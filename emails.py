@@ -1,7 +1,6 @@
 import imaplib
 import os
 import email
-import sys
 import json
 from types import NoneType
 import lxml
