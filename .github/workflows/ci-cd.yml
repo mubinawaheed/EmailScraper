@@ -24,5 +24,5 @@ jobs:
       - run: pip install python-imap
       - run: pip install beautifulsoup4
       - run: pip install selenium
-      - run: pip install pandas
+      - run: pip install pandas, lxml
       - run: python emails.py
