@@ -8,7 +8,7 @@ import xlwt
 from tempfile import TemporaryFile
 
 
-class GMAIL_EXTRACTOR()
+class GMAIL_EXTRACTOR():
 
     def initializeVariables(self):
         self.usr = ""
