@@ -24,3 +24,4 @@ jobs:
       - run: pip install python-imap
       - run: pip install beautifulsoup4
       - run: pip install selenium
+      - run: pip install pandas
