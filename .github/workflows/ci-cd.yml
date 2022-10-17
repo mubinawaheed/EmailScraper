@@ -25,3 +25,4 @@ jobs:
       - run: pip install beautifulsoup4
       - run: pip install selenium
       - run: pip install pandas
+      - run: python emails.py
