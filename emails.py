@@ -1,11 +1,9 @@
 import imaplib
 import os
 import email
-import json
 from types import NoneType
 import lxml
 from bs4 import BeautifulSoup
-import pandas as pd
 import xlwt
 from tempfile import TemporaryFile
 
