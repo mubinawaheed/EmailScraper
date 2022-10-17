@@ -21,3 +21,4 @@ jobs:
         uses: actions/setup-python@v3
       - run: echo "installing necessary python libraries."
       - run: python --version
+      - run: pip install imaplib
