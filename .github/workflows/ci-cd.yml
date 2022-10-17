@@ -19,4 +19,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Installing dependencies
         uses: actions/setup-python@v3
-      - run: echo "installing necessary python libraries."  
+      - run: echo "installing necessary python libraries. using ${{ python --version }}"  
