@@ -1,6 +1,8 @@
 import imaplib
 import os
 import email
+import sys
+import json
 from types import NoneType
 import lxml
 from bs4 import BeautifulSoup
@@ -39,12 +41,7 @@ class GMAIL_EXTRACTOR():
 
     def checkIfUsersWantsToContinue(self):
         print("\nWe have found "+str(self.mailCount)+" emails in the mailbox "+self.mailbox+".")
-	m_=input("Do you wish to continue extracting all the emails into "+self.destFolder+"? (y/N) ").lower().strip()[:1]
-	if m_ == "y":
-		return True
-	else:
-		return False
-	
+        return True if input("Do you wish to continue extracting all the emails into "+self.destFolder+"? (y/N) ").lower().strip()[:1] == "y" else False       
         
     def selectMailbox(self):
         self.mailbox = input("\nPlease type the name of the mailbox you want to extract, e.g. Inbox: ")
@@ -52,12 +49,10 @@ class GMAIL_EXTRACTOR():
         self.mailCount = int(bin_count[0].decode("utf-8"))
         return True if self.mailCount > 0 else False
 
-
     def searchThroughMailbox(self):
         type, self.data = self.mail.search(None, "ALL")
         self.ids = self.data[0]
         self.idsList = self.ids.split()
-	
 
     def parseEmails(self):
         jsonOutput = {}
@@ -158,7 +153,6 @@ class GMAIL_EXTRACTOR():
             
         # print(subjectlist, bodylist, tolist, datelist, fromlist)
 
-        from tempfile import TemporaryFile
         book = xlwt.Workbook()
         sheet1 = book.add_sheet('sheet1')
 
