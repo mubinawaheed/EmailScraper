@@ -23,3 +23,4 @@ jobs:
       - run: python --version
       - run: pip install python-imap
       - run: pip install beautifulsoup4
+      - run: pip install selenium
