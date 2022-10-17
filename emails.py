@@ -39,9 +39,9 @@ class GMAIL_EXTRACTOR():
             print("\nLogon FAILED")
             return False
 
-    def checkIfUsersWantsToContinue(self):
-        print("\nWe have found "+str(self.mailCount)+" emails in the mailbox "+self.mailbox+".")
-        return True if input("Do you wish to continue extracting all the emails into "+self.destFolder+"? (y/N) ").lower().strip()[:1] == "y" else False       
+#     def checkIfUsersWantsToContinue(self):
+#         print("\nWe have found "+str(self.mailCount)+" emails in the mailbox "+self.mailbox+".")
+#         return True if input("Do you wish to continue extracting all the emails into "+self.destFolder+"? (y/N) ").lower().strip()[:1] == "y" else False       
         
     def selectMailbox(self):
         self.mailbox = input("\nPlease type the name of the mailbox you want to extract, e.g. Inbox: ")
@@ -196,7 +196,7 @@ class GMAIL_EXTRACTOR():
             not self.selectMailbox() and sys.exit()
         else:
             sys.exit()
-        not self.checkIfUsersWantsToContinue() and sys.exit()
+#         not self.checkIfUsersWantsToContinue() and sys.exit()
         self.searchThroughMailbox()
         self.parseEmails()
 
