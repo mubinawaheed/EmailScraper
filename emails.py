@@ -32,9 +32,13 @@ class GMAIL_EXTRACTOR():
         self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         if self.mail.login(self.usr, self.pwd):
             print("\nLogon SUCCESSFUL")
-            self.destFolder = input("\nPlease choose a destination folder ")
-            if not self.destFolder.endswith("/"): self.destFolder+="/"
-            return True
+	try:
+		self.destFolder = input("\nPlease choose a destination folder ")
+            	if not self.destFolder.endswith("/"): self.destFolder+="/"
+            	return True
+	except:
+		return False
+		
         else:
             print("\nLogon FAILED")
             return False
