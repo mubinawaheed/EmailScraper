@@ -171,7 +171,7 @@ class GMAIL_EXTRACTOR():
 
             sheet1.write(i+1,1,e)
 
-        for i,e in enumerate(datelist)::
+        for i,e in enumerate(datelist):
 
             e = e.replace("\r\n","")
             sheet1.write(i+1,2,e)
